@@ -9,7 +9,25 @@ import FinalCTA from './components/FinalCTA';
 import Countdown from './components/Countdown';
 import StickyCTA from './components/StickyCTA';
 import Footer from './components/Footer';
+import Bonuses from './components/Bonuses';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+
+function GoldCursor() {
+  React.useEffect(() => {
+    const cursor = document.createElement('div');
+    cursor.className = 'gold-cursor';
+    document.body.appendChild(cursor);
+    const move = (e: MouseEvent) => {
+      cursor.style.transform = `translate3d(${e.clientX - 14}px, ${e.clientY - 14}px, 0)`;
+    };
+    window.addEventListener('mousemove', move);
+    return () => {
+      window.removeEventListener('mousemove', move);
+      cursor.remove();
+    };
+  }, []);
+  return null;
+}
 
 function App() {
   return (
@@ -50,6 +68,7 @@ function App() {
         `}</script>
       </Helmet>
       <div className="min-h-screen bg-gradient-to-br from-[#181A20] via-[#23262F] to-[#101014] text-white">
+        <GoldCursor />
         <Hero />
         <WhatIs />
         <Storytelling />
@@ -57,6 +76,7 @@ function App() {
         <Comparison />
         <Testimonials />
         <Countdown />
+        <Bonuses />
         <FinalCTA />
         <Footer />
         <StickyCTA />

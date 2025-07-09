@@ -181,3 +181,25 @@ section {
 .group-hover\:animate-red-glow:hover {
   animation: red-glow 1.2s infinite;
 }
+
+@media (pointer: fine) {
+  html, body {
+    cursor: none !important;
+  }
+  .gold-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle at 60% 40%, #FFD700cc 60%, #D4AF37 100%, transparent 100%);
+    box-shadow: 0 0 16px 2px #D4AF3755;
+    mix-blend-mode: lighten;
+    z-index: 9999;
+    transition: transform 0.13s cubic-bezier(.4,1.6,.6,1), opacity 0.2s;
+    opacity: 0.85;
+    will-change: transform;
+  }
+}

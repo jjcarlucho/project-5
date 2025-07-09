@@ -13,26 +13,12 @@ const Footer = () => {
               Método Matemático Exclusivo
             </p>
           </div>
-          
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-8">
-            <button className="text-gray-400 hover:text-yellow-400 transition-colors">
-              Contacto Privado
-            </button>
-            <div className="w-px h-4 bg-gray-600 hidden sm:block"></div>
-            <button className="text-gray-400 hover:text-yellow-400 transition-colors">
-              Descarga Directa
-            </button>
-          </div>
-          
           <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-8"></div>
-          
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm mb-4">
             © 2025 UN JUEGO. UN SISTEMA. — Método Matemático Exclusivo
           </p>
-          
-          <p className="text-gray-600 text-xs mt-2">
-            Este sistema está diseñado exclusivamente para profesionales y personas 
-            con mentalidad disciplinada que buscan resultados consistentes.
+          <p className="text-gray-600 text-xs">
+            Descargo de responsabilidad: Este contenido es solo para fines informativos y educativos. No constituye asesoramiento financiero, legal ni de inversión. Los resultados pasados no garantizan resultados futuros. Utiliza este método bajo tu propio riesgo.
           </p>
         </div>
       </div>
