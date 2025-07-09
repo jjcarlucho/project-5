@@ -36,6 +36,19 @@ const benefits = [
   }
 ];
 
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.13,
+    },
+  },
+};
+const card = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+};
+
 const Benefits = () => {
   return (
     <section className="py-28 bg-transparent relative overflow-hidden">
@@ -49,17 +62,22 @@ const Benefits = () => {
             Beneficios que no encontrarás en ningún otro sistema
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-10">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-10"
+        >
           {benefits.map((benefit, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: i * 0.1 }}
-              className="premium-glass flex flex-col items-center text-center p-8 rounded-2xl border border-yellow-500/10 shadow-xl"
+              variants={card}
+              whileHover={{ scale: 1.06, boxShadow: '0 0 32px #D4AF37aa' }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="premium-glass flex flex-col items-center text-center p-8 rounded-2xl border border-yellow-500/10 shadow-xl cursor-pointer group"
             >
-              <div className="mb-6">
+              <div className="mb-6 group-hover:animate-gold-glow">
                 {benefit.icon}
               </div>
               <h3 className="text-2xl font-bold text-yellow-400 font-serif mb-2 drop-shadow">
@@ -70,7 +88,7 @@ const Benefits = () => {
               </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

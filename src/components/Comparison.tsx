@@ -1,5 +1,19 @@
 import React from 'react';
 import { Check, X } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+const card = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+};
 
 const yesItems = [
   "Control absoluto sobre cada decisión",
@@ -34,12 +48,23 @@ const Comparison = () => {
             Claridad absoluta sobre el enfoque correcto vs. el enfoque común
           </p>
         </div>
-        <div className="grid lg:grid-cols-2 gap-16">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid lg:grid-cols-2 gap-16"
+        >
           {/* What it IS */}
-          <div className="premium-glass bg-gradient-to-br from-green-900/10 to-green-800/10 p-10 rounded-2xl border border-green-500/20 shadow-xl">
+          <motion.div
+            variants={card}
+            whileHover={{ scale: 1.06, boxShadow: '0 0 32px #3be13b88' }}
+            transition={{ type: 'spring', stiffness: 300 }}
+            className="premium-glass bg-gradient-to-br from-green-900/10 to-green-800/10 p-10 rounded-2xl border border-green-500/20 shadow-xl cursor-pointer group"
+          >
             <div className="flex items-center gap-3 mb-8">
               <div className="p-2 bg-green-500 rounded-lg">
-                <Check className="w-6 h-6 text-white" />
+                <Check className="w-6 h-6 text-white group-hover:animate-green-glow" />
               </div>
               <h3 className="text-2xl font-bold text-green-400 font-serif">ESTO SÍ</h3>
             </div>
@@ -51,12 +76,17 @@ const Comparison = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
           {/* What it is NOT */}
-          <div className="premium-glass bg-gradient-to-br from-red-900/10 to-red-800/10 p-10 rounded-2xl border border-red-500/20 shadow-xl">
+          <motion.div
+            variants={card}
+            whileHover={{ scale: 1.06, boxShadow: '0 0 32px #e13b3b88' }}
+            transition={{ type: 'spring', stiffness: 300 }}
+            className="premium-glass bg-gradient-to-br from-red-900/10 to-red-800/10 p-10 rounded-2xl border border-red-500/20 shadow-xl cursor-pointer group"
+          >
             <div className="flex items-center gap-3 mb-8">
               <div className="p-2 bg-red-500 rounded-lg">
-                <X className="w-6 h-6 text-white" />
+                <X className="w-6 h-6 text-white group-hover:animate-red-glow" />
               </div>
               <h3 className="text-2xl font-bold text-red-400 font-serif">ESTO NO</h3>
             </div>
@@ -68,8 +98,8 @@ const Comparison = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         <div className="text-center mt-20">
           <p className="text-2xl font-light text-yellow-400 italic">
             "La diferencia entre apostar y invertir está en el sistema que usas."

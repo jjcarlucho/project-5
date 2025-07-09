@@ -9,14 +9,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/playfair-display": "^5.2.6",
     "@testing-library/react": "^16.3.0",
     "@types/react-helmet-async": "^1.0.1",
-    "framer-motion": "^12.23.0",
+    "framer-motion": "^12.23.1",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
-    "react-helmet-async": "^2.0.5"
+    "react-helmet-async": "^2.0.5",
+    "react-parallax-tilt": "^1.7.300",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles": "^3.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
 
 * {
   margin: 0;
@@ -16,7 +16,7 @@ body {
 }
 
 h1, h2, h3, .font-serif {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif !important;
   letter-spacing: -0.01em;
 }
 
@@ -158,4 +158,26 @@ section {
   box-shadow: 0 8px 40px 0 #D4AF3722, 0 1.5px 8px 0 #0008;
   border-radius: 1.25rem;
   border: 1.5px solid rgba(212,175,55,0.10);
+}
+
+@keyframes gold-glow {
+  0%, 100% { filter: drop-shadow(0 0 0 #D4AF37); }
+  50% { filter: drop-shadow(0 0 16px #D4AF37cc); }
+}
+.group-hover\:animate-gold-glow:hover {
+  animation: gold-glow 1.2s infinite;
+}
+@keyframes green-glow {
+  0%, 100% { filter: drop-shadow(0 0 0 #3be13b); }
+  50% { filter: drop-shadow(0 0 16px #3be13bcc); }
+}
+.group-hover\:animate-green-glow:hover {
+  animation: green-glow 1.2s infinite;
+}
+@keyframes red-glow {
+  0%, 100% { filter: drop-shadow(0 0 0 #e13b3b); }
+  50% { filter: drop-shadow(0 0 16px #e13b3bcc); }
+}
+.group-hover\:animate-red-glow:hover {
+  animation: red-glow 1.2s infinite;
 }
