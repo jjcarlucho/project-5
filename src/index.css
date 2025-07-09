@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;700&display=swap');
 
 * {
   margin: 0;
@@ -11,20 +11,21 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: #ffffff;
-  background-color: #000000;
-  overflow-x: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #181A20;
+  color: #fff;
+  min-height: 100vh;
 }
 
-.font-serif {
+h1, h2, h3, .font-serif {
   font-family: 'Playfair Display', serif;
+  letter-spacing: -0.01em;
 }
 
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+  background: #181A20;
 }
 
 /* Custom animations */
@@ -77,6 +78,7 @@ html {
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
+  background: #23262F;
 }
 
 ::-webkit-scrollbar-track {
@@ -84,8 +86,8 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-  border-radius: 4px;
+  background: #2d2f36;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -143,4 +145,18 @@ a:focus {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Eliminar cualquier fondo repetido de secciones */
+section {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+/* Botón premium glass */
+.premium-glass {
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid rgba(212,175,55,0.18);
+  box-shadow: 0 4px 32px 0 rgba(212,175,55,0.10);
+  backdrop-filter: blur(8px);
 }

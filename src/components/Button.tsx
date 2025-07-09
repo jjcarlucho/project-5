@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 interface ButtonBaseProps {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary';
+  className?: string;
 }
 
 // Props para <button>
@@ -26,12 +27,13 @@ const baseStyles = {
 };
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  const { as = 'button', children, variant = 'primary', ...rest } = props as ButtonProps;
+  const { as = 'button', children, variant = 'primary', className = '', ...rest } = props as ButtonProps;
+  const classes = `${baseStyles[variant]} ${className}`;
   if (as === 'a') {
     const { href, ...anchorProps } = rest as ButtonAsAnchorProps;
     return (
       <motion.div whileTap={{ scale: 0.97 }} whileHover={{ scale: 1.05 }}>
-        <a className={baseStyles[variant]} href={href} {...anchorProps}>
+        <a className={classes} href={href} {...anchorProps}>
           {children}
         </a>
       </motion.div>
@@ -39,7 +41,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   }
   return (
     <motion.div whileTap={{ scale: 0.97 }} whileHover={{ scale: 1.05 }}>
-      <button className={baseStyles[variant]} {...(rest as ButtonAsButtonProps)}>
+      <button className={classes} {...(rest as ButtonAsButtonProps)}>
         {children}
       </button>
     </motion.div>

@@ -23,7 +23,7 @@ function App() {
         <meta name="twitter:title" content="UN JUEGO. UN SISTEMA." />
         <meta name="twitter:description" content="Método matemático exclusivo con 98% de precisión" />
       </Helmet>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-gradient-to-br from-[#181A20] via-[#23262F] to-[#101014] text-white">
         <Hero />
         <WhatIs />
         <Storytelling />
