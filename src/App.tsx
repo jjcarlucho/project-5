@@ -21,9 +21,33 @@ function App() {
         <meta property="og:title" content="UN JUEGO. UN SISTEMA. — Método Matemático Exclusivo" />
         <meta property="og:description" content="El método matemático secreto con 98% de efectividad. Usado en más de 500,000 shoes." />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="/og-cover.jpg" />
+        <meta property="og:image:alt" content="Portada del libro Un Juego Un Sistema" />
+        <meta property="og:url" content="https://project-5-oiqg3uc1l-jonathans-projects-53172663.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="UN JUEGO. UN SISTEMA." />
         <meta name="twitter:description" content="Método matemático exclusivo con 98% de precisión" />
+        <meta name="twitter:image" content="/og-cover.jpg" />
+        <meta name="twitter:image:alt" content="Portada del libro Un Juego Un Sistema" />
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "UN JUEGO. UN SISTEMA.",
+            "description": "El método matemático secreto con 98% de efectividad. Usado en más de 500,000 shoes. Nunca antes revelado públicamente.",
+            "image": "https://project-5-oiqg3uc1l-jonathans-projects-53172663.vercel.app/og-cover.jpg",
+            "brand": {
+              "@type": "Brand",
+              "name": "UN JUEGO. UN SISTEMA."
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "25000.00",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        `}</script>
       </Helmet>
       <div className="min-h-screen bg-gradient-to-br from-[#181A20] via-[#23262F] to-[#101014] text-white">
         <Hero />
