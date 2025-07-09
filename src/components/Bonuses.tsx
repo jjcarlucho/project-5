@@ -6,13 +6,15 @@ const bonuses = [
     name: 'Su Deseo Es Su Mandato',
     price: 500,
     img: '', // Espacio para imagen
-    description: 'Acceso exclusivo al legendario entrenamiento de mentalidad y riqueza. (Próximamente descripción premium)',
+    description: `Acceso exclusivo al legendario entrenamiento “Your Wish Is Your Command”. Descubre el secreto mejor guardado de la élite mundial para manifestar deseos, riqueza y éxito. Este audio-seminario, grabado en un retiro privado en los Alpes suizos, revela cómo activar la frecuencia cerebral THETA (“la onda de los millonarios”) para atraer dinero, salud, amor y poder simplemente con tus pensamientos. Técnicas nunca antes reveladas, validadas por la neurociencia, para convertirte en un imán de oportunidades y resultados. Miles de personas en más de 100 países ya han transformado su vida con este método. Valor real: $500 USD, incluido GRATIS por tiempo limitado.`,
+    ref: 'https://www.yourwishoffer.com/?aff=67847ad36c334aff9189da90aa84baf7b9a1d32b86599ecad2e465c14cffbcdf',
   },
   {
     name: 'Tapping',
     price: 297,
     img: '', // Espacio para imagen
-    description: 'El método de liberación emocional y enfoque mental más avanzado. (Próximamente descripción premium)',
+    description: `El método Tapping (TFT/EFT): Libera tu potencial y elimina bloqueos en minutos. Accede a la técnica de liberación emocional y reprogramación mental utilizada por atletas de élite, empresarios y terapeutas de todo el mundo. El Tapping combina acupresión y psicología energética para ayudarte a superar miedos, estrés, ansiedad, creencias limitantes y traumas… en minutos. Incluye guía práctica y audios exclusivos para aplicar el método desde el primer día. Valor real: $297 USD, pero lo recibes GRATIS junto al método principal.`,
+    ref: 'https://tfttapping.com/',
   },
 ];
 
@@ -77,6 +79,7 @@ const Bonuses = () => (
                 {b.name}
               </h3>
               <div className="text-lg text-gray-300 mb-4">{b.description}</div>
+              <a href={b.ref} target="_blank" rel="noopener noreferrer" className="text-yellow-400 underline text-sm mb-2 inline-block">Ver más</a>
               <div className="text-yellow-200 text-xl font-bold mb-2">
                 Valor: <span className="text-2xl text-yellow-400 font-extrabold">${b.price}</span> USD
               </div>
