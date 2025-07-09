@@ -6,19 +6,16 @@ const testimonials = [
     name: 'Alejandro G.',
     avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
     quote: 'Nunca vi un método tan preciso. Mi rentabilidad se disparó y mi mentalidad cambió para siempre. Es realmente exclusivo.',
-    title: 'Inversor profesional',
   },
   {
     name: 'Lucía P.',
     avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
     quote: 'El sistema es simple, elegante y brutalmente efectivo. No es para cualquiera, pero si eres disciplinado, es oro puro.',
-    title: 'Empresaria',
   },
   {
     name: 'Kevin T.',
     avatar: 'https://randomuser.me/api/portraits/men/65.jpg',
     quote: 'He pagado miles por cursos y nunca vi algo tan matemático y real. Esto es lo que usan los grandes.',
-    title: 'Jugador profesional',
   },
 ];
 
@@ -61,10 +58,9 @@ const Testimonials = () => (
             transition={{ type: 'spring', stiffness: 300 }}
             className="premium-glass flex flex-col items-center text-center p-8 rounded-2xl border border-yellow-500/10 shadow-xl cursor-pointer group"
           >
-            <img src={t.avatar} alt={t.name} className="w-20 h-20 rounded-full border-4 border-yellow-400 mb-4 object-cover shadow-lg" />
+            <img src={t.avatar} alt={t.name} loading="lazy" className="w-20 h-20 rounded-full border-4 border-yellow-400 mb-4 object-cover shadow-lg" />
             <p className="text-lg text-gray-200 italic mb-4">“{t.quote}”</p>
             <div className="text-yellow-400 font-bold text-lg">{t.name}</div>
-            <div className="text-gray-400 text-sm">{t.title}</div>
           </motion.div>
         ))}
       </motion.div>

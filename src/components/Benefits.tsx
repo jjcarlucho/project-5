@@ -1,6 +1,6 @@
 import React from 'react';
 import { Calculator, Zap, TrendingUp, Brain, Shield, Target } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 import SectionTitle from './SectionTitle';
 
 const benefits = [
@@ -40,13 +40,13 @@ const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.13,
+      staggerChildren: 0.08, // más rápido
     },
   },
 };
 const card = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: easeOut } },
 };
 
 const Benefits = () => {
@@ -73,8 +73,8 @@ const Benefits = () => {
             <motion.div
               key={i}
               variants={card}
-              whileHover={{ scale: 1.06, boxShadow: '0 0 32px #D4AF37aa' }}
-              transition={{ type: 'spring', stiffness: 300 }}
+              whileHover={{ scale: 1.03, boxShadow: '0 0 18px #D4AF37aa' }}
+              transition={{ type: 'spring', stiffness: 400, damping: 22 }}
               className="premium-glass flex flex-col items-center text-center p-8 rounded-2xl border border-yellow-500/10 shadow-xl cursor-pointer group"
             >
               <div className="mb-6 group-hover:animate-gold-glow">

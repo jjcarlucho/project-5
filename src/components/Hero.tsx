@@ -7,20 +7,24 @@ import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 
 const Hero = () => {
-  // Configuración de partículas doradas
+  // Detectar si el usuario prefiere menos animaciones
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Configuración de partículas doradas optimizada
   const particlesInit = async (main: any) => {
-    await loadFull(main);
+    if (!prefersReducedMotion) {
+      await loadFull(main);
+    }
   };
   const particlesOptions = {
     fullScreen: false,
     background: { color: 'transparent' },
     particles: {
-      number: { value: 32, density: { enable: true, value_area: 800 } },
+      number: { value: prefersReducedMotion ? 0 : 14, density: { enable: true, value_area: 800 } },
       color: { value: '#D4AF37' },
       shape: { type: 'circle' },
-      opacity: { value: 0.18, random: true },
-      size: { value: 2.5, random: { enable: true, minimumValue: 1 } },
-      move: { enable: true, speed: 0.6, direction: 'none' as const, random: true, straight: false, outModes: { default: 'out' as const } },
+      opacity: { value: 0.10, random: true },
+      size: { value: 2, random: { enable: true, minimumValue: 1 } },
+      move: { enable: !prefersReducedMotion, speed: 0.4, direction: 'none' as const, random: true, straight: false, outModes: { default: 'out' as const } },
     },
     detectRetina: true,
   };
@@ -83,6 +87,7 @@ const Hero = () => {
               <img
                 src="/WhatsApp Image 2025-07-08 at 11.49.39 PM.jpeg"
                 alt="Tapa del libro Un Juego Un Sistema"
+                loading="lazy"
                 className="relative z-10 w-full h-full object-cover rounded-2xl shadow-2xl border border-yellow-500/20"
                 style={{ boxShadow: '0 8px 40px 0 #D4AF37aa' }}
               />
