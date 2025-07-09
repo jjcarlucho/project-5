@@ -1,86 +1,75 @@
 import React from 'react';
-import { Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "John M.",
-      country: "🇺🇸",
-      role: "Inversor de fondos",
-      text: "Después de 15 años en Wall Street, puedo confirmar que este sistema es matemáticamente sólido. Los resultados hablan por sí mismos.",
-      rating: 5
-    },
-    {
-      name: "Carlos R.",
-      country: "🇪🇸",
-      role: "Trader profesional",
-      text: "Llevo usando este método 8 meses. La consistencia es impresionante. No es emocional, es pura lógica.",
-      rating: 5
-    },
-    {
-      name: "Marie L.",
-      country: "🇫🇷",
-      role: "Analista financiera",
-      text: "Como matemática, aprecio la elegancia de este sistema. 98% de precisión no es casualidad, es ciencia.",
-      rating: 5
-    },
-    {
-      name: "David K.",
-      country: "🇬🇧",
-      role: "Gestor de riesgos",
-      text: "He validado este sistema con mis propios datos. Los patrones son reales y los resultados, consistentes.",
-      rating: 5
-    }
-  ];
+const testimonials = [
+  {
+    name: 'Alejandro G.',
+    avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
+    quote: 'Nunca vi un método tan preciso. Mi rentabilidad se disparó y mi mentalidad cambió para siempre. Es realmente exclusivo.',
+    title: 'Inversor profesional',
+  },
+  {
+    name: 'Lucía P.',
+    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+    quote: 'El sistema es simple, elegante y brutalmente efectivo. No es para cualquiera, pero si eres disciplinado, es oro puro.',
+    title: 'Empresaria',
+  },
+  {
+    name: 'Kevin T.',
+    avatar: 'https://randomuser.me/api/portraits/men/65.jpg',
+    quote: 'He pagado miles por cursos y nunca vi algo tan matemático y real. Esto es lo que usan los grandes.',
+    title: 'Jugador profesional',
+  },
+];
 
-  return (
-    <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-            Validación
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
-              profesional
-            </span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Testimonios de profesionales que han verificado y aplicado el sistema
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-xl border border-gray-700 hover:border-yellow-500/30 transition-all duration-300"
-            >
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              
-              <blockquote className="text-gray-300 leading-relaxed mb-6 italic">
-                "{testimonial.text}"
-              </blockquote>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-r from-yellow-600 to-yellow-500 rounded-full flex items-center justify-center text-black font-bold text-lg">
-                  {testimonial.name.charAt(0)}
-                </div>
-                <div>
-                  <p className="text-white font-semibold">
-                    {testimonial.country} {testimonial.name}
-                  </p>
-                  <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
 };
+const card = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+};
+
+const Testimonials = () => (
+  <section className="py-28 bg-transparent relative overflow-hidden">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+          Testimonios <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">reales</span>
+        </h2>
+        <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          Personas que ya aplicaron el método y cambiaron su juego para siempre.
+        </p>
+      </div>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="grid md:grid-cols-3 gap-10"
+      >
+        {testimonials.map((t, i) => (
+          <motion.div
+            key={i}
+            variants={card}
+            whileHover={{ scale: 1.05, boxShadow: '0 0 32px #D4AF37aa' }}
+            transition={{ type: 'spring', stiffness: 300 }}
+            className="premium-glass flex flex-col items-center text-center p-8 rounded-2xl border border-yellow-500/10 shadow-xl cursor-pointer group"
+          >
+            <img src={t.avatar} alt={t.name} className="w-20 h-20 rounded-full border-4 border-yellow-400 mb-4 object-cover shadow-lg" />
+            <p className="text-lg text-gray-200 italic mb-4">“{t.quote}”</p>
+            <div className="text-yellow-400 font-bold text-lg">{t.name}</div>
+            <div className="text-gray-400 text-sm">{t.title}</div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  </section>
+);
 
 export default Testimonials;

@@ -6,6 +6,8 @@ import Benefits from './components/Benefits';
 import Comparison from './components/Comparison';
 import Testimonials from './components/Testimonials';
 import FinalCTA from './components/FinalCTA';
+import Countdown from './components/Countdown';
+import StickyCTA from './components/StickyCTA';
 import Footer from './components/Footer';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
@@ -30,8 +32,10 @@ function App() {
         <Benefits />
         <Comparison />
         <Testimonials />
+        <Countdown />
         <FinalCTA />
         <Footer />
+        <StickyCTA />
       </div>
     </HelmetProvider>
   );
