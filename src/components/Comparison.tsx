@@ -1,29 +1,30 @@
 import React from 'react';
 import { Check, X } from 'lucide-react';
 
+const yesItems = [
+  "Control absoluto sobre cada decisión",
+  "Estrategia basada en matemáticas",
+  "Números, patrones y probabilidades",
+  "Disciplina y paciencia",
+  "Ganancias consistentes y medibles",
+  "Enfoque profesional y sistemático"
+];
+
+const noItems = [
+  "Depender del azar o la suerte",
+  "Decisiones basadas en emociones",
+  "Impulsividad y adrenalina",
+  "Esperanza de 'golpes de suerte'",
+  "Pérdidas incontrolables",
+  "Mentalidad de entretenimiento"
+];
+
 const Comparison = () => {
-  const yesItems = [
-    "Control absoluto sobre cada decisión",
-    "Estrategia basada en matemáticas",
-    "Números, patrones y probabilidades",
-    "Disciplina y paciencia",
-    "Ganancias consistentes y medibles",
-    "Enfoque profesional y sistemático"
-  ];
-
-  const noItems = [
-    "Depender del azar o la suerte",
-    "Decisiones basadas en emociones",
-    "Impulsividad y adrenalina",
-    "Esperanza de 'golpes de suerte'",
-    "Pérdidas incontrolables",
-    "Mentalidad de entretenimiento"
-  ];
-
   return (
-    <section className="py-20 bg-black">
+    <section className="py-28 bg-transparent relative">
+      <div className="absolute left-1/2 top-0 -translate-x-1/2 w-2/3 h-1 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent rounded-full" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
             Lo que
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"> NO es </span>
@@ -33,17 +34,15 @@ const Comparison = () => {
             Claridad absoluta sobre el enfoque correcto vs. el enfoque común
           </p>
         </div>
-        
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-16">
           {/* What it IS */}
-          <div className="bg-gradient-to-br from-green-900/20 to-green-800/20 p-8 rounded-xl border border-green-500/30">
+          <div className="premium-glass bg-gradient-to-br from-green-900/10 to-green-800/10 p-10 rounded-2xl border border-green-500/20 shadow-xl">
             <div className="flex items-center gap-3 mb-8">
               <div className="p-2 bg-green-500 rounded-lg">
                 <Check className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-green-400">ESTO SÍ</h3>
+              <h3 className="text-2xl font-bold text-green-400 font-serif">ESTO SÍ</h3>
             </div>
-            
             <div className="space-y-4">
               {yesItems.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -53,16 +52,14 @@ const Comparison = () => {
               ))}
             </div>
           </div>
-          
           {/* What it is NOT */}
-          <div className="bg-gradient-to-br from-red-900/20 to-red-800/20 p-8 rounded-xl border border-red-500/30">
+          <div className="premium-glass bg-gradient-to-br from-red-900/10 to-red-800/10 p-10 rounded-2xl border border-red-500/20 shadow-xl">
             <div className="flex items-center gap-3 mb-8">
               <div className="p-2 bg-red-500 rounded-lg">
                 <X className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-red-400">ESTO NO</h3>
+              <h3 className="text-2xl font-bold text-red-400 font-serif">ESTO NO</h3>
             </div>
-            
             <div className="space-y-4">
               {noItems.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -73,8 +70,7 @@ const Comparison = () => {
             </div>
           </div>
         </div>
-        
-        <div className="text-center mt-12">
+        <div className="text-center mt-20">
           <p className="text-2xl font-light text-yellow-400 italic">
             "La diferencia entre apostar y invertir está en el sistema que usas."
           </p>

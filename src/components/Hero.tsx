@@ -51,7 +51,7 @@ const Hero = () => {
           <div className="relative w-[340px] h-[480px] flex items-center justify-center">
             <div className="absolute -inset-4 bg-gradient-to-br from-yellow-400/20 to-yellow-600/10 blur-2xl rounded-3xl z-0" />
             <img
-              src="/WhatsApp%20Image%202025-07-08%20at%2011.49.39%20PM.jpeg"
+              src="/WhatsApp Image 2025-07-08 at 11.49.39 PM.jpeg"
               alt="Tapa del libro Un Juego Un Sistema"
               className="relative z-10 w-full h-full object-cover rounded-2xl shadow-2xl border border-yellow-500/20"
               style={{ boxShadow: '0 8px 40px 0 #D4AF37aa' }}

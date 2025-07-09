@@ -27,32 +27,19 @@ const features = [
 
 const WhatIs = () => {
   return (
-    <section className="py-28 bg-transparent relative">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle
-          title="Esto no es un libro."
-          highlight="Es una fórmula."
-          className="text-center mb-20"
-        />
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="premium-glass group p-10 rounded-2xl border border-yellow-500/10 hover:border-yellow-400/40 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-yellow-500/10 flex items-start gap-6"
-            >
-              <div className="p-4 bg-gradient-to-r from-yellow-600/20 to-yellow-500/10 rounded-xl flex items-center justify-center">
-                {feature.icon}
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-yellow-400 transition-colors font-serif">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            </div>
-          ))}
+    <section className="py-28 bg-transparent relative overflow-hidden">
+      <div className="absolute left-1/2 top-0 -translate-x-1/2 w-2/3 h-1 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent rounded-full" />
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="premium-glass p-12 rounded-2xl border border-yellow-500/10 shadow-xl text-center">
+          <div className="flex justify-center mb-6">
+            <svg width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" stroke="#D4AF37" strokeWidth="3" fill="#23262F" /><path d="M24 14v12l8 4" stroke="#D4AF37" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+            ¿Qué es <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Un Juego. Un Sistema.</span>?
+          </h2>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Un método matemático exclusivo, diseñado para transformar la manera en que tomas decisiones y maximizas tus resultados. Basado en patrones, estadísticas y la disciplina de los grandes inversores.
+          </p>
         </div>
       </div>
     </section>
