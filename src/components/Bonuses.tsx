@@ -36,10 +36,10 @@ const Bonuses = () => (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-          Bonos <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">exclusivos</span>
+          Bonos <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">solo para preventa</span>
         </h2>
-        <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-          Solo por acceder ahora, recibes estos bonos premium sin costo adicional.
+        <p className="text-xl text-yellow-400 max-w-2xl mx-auto font-semibold">
+          Estos bonos premium solo estarán disponibles para quienes reserven su acceso durante la preventa. Una vez revelado el sistema, nunca más volverán a ofrecerse.
         </p>
       </div>
       <motion.div

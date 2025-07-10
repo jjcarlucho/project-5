@@ -50,18 +50,18 @@ const FinalCTA = () => {
   return (
     <section id="final-cta" className="py-24 flex justify-center items-center bg-transparent">
       <div className="premium-glass max-w-xl w-full mx-auto p-12 rounded-2xl border border-yellow-500/10 shadow-2xl text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
-          Accede al método <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">antes que nadie</span>
+        <h2 className="text-3xl md:text-4xl font-serif font-bold text-yellow-400 mb-6">
+          Reserva tu acceso <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">antes que el sistema sea revelado</span>
         </h2>
         <p className="text-lg text-gray-300 mb-8">
-          Suscríbete para recibir acceso prioritario y material exclusivo.
+          Estás a punto de entrar a la preventa secreta. Solo los primeros tendrán acceso anticipado y bonos exclusivos. ¡No garantizado para todos!
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-center justify-center">
           <input
             type="text"
             value={nombre}
             onChange={e => setNombre(e.target.value)}
-            placeholder="Nombre"
+            placeholder="Tu nombre real (confidencial)"
             className="w-full px-6 py-4 rounded-xl bg-black/40 border border-yellow-500/20 text-white placeholder:text-yellow-200/60 focus:outline-none focus:ring-2 focus:ring-yellow-400/40 text-lg font-light transition"
             disabled={submitted}
             required
@@ -70,7 +70,7 @@ const FinalCTA = () => {
             type="text"
             value={apellido}
             onChange={e => setApellido(e.target.value)}
-            placeholder="Apellido"
+            placeholder="Tu apellido (no se comparte)"
             className="w-full px-6 py-4 rounded-xl bg-black/40 border border-yellow-500/20 text-white placeholder:text-yellow-200/60 focus:outline-none focus:ring-2 focus:ring-yellow-400/40 text-lg font-light transition"
             disabled={submitted}
             required
@@ -79,7 +79,7 @@ const FinalCTA = () => {
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
-            placeholder="Email"
+            placeholder="Email para acceso anticipado"
             className="w-full px-6 py-4 rounded-xl bg-black/40 border border-yellow-500/20 text-white placeholder:text-yellow-200/60 focus:outline-none focus:ring-2 focus:ring-yellow-400/40 text-lg font-light transition"
             disabled={submitted}
             required
@@ -91,7 +91,7 @@ const FinalCTA = () => {
             className="px-8 py-4 rounded-xl bg-gradient-to-r from-yellow-500/80 to-yellow-400/80 text-black font-bold text-lg shadow-lg border border-yellow-500/30 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
             disabled={submitted}
           >
-            {submitted ? '¡Listo!' : 'Quiero Acceso'}
+            {submitted ? '¡Reservado!' : 'Reservar mi lugar secreto'}
           </motion.button>
         </form>
         <AnimatePresence>
@@ -115,7 +115,7 @@ const FinalCTA = () => {
               className="flex flex-col items-center mt-8"
             >
               <CheckCircle2 className="w-16 h-16 text-yellow-400 mb-2 animate-bounce" />
-              <span className="text-yellow-200 text-lg font-semibold">¡Suscripción exitosa! Revisa tu correo para más novedades.</span>
+              <span className="text-yellow-200 text-lg font-semibold">¡Pre-reserva exitosa! Pronto recibirás instrucciones secretas en tu correo.</span>
             </motion.div>
           )}
         </AnimatePresence>

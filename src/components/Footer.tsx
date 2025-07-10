@@ -7,18 +7,18 @@ const Footer = () => {
         <div className="text-center">
           <div className="mb-8">
             <h3 className="text-2xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 mb-2">
-              UN JUEGO. UN SISTEMA.
+              UN JUEGO. UN SISTEMA. — PREVENTA EXCLUSIVA
             </h3>
-            <p className="text-gray-400">
-              Método Matemático Exclusivo
+            <p className="text-yellow-400 font-semibold">
+              Acceso anticipado y contenido confidencial. Solo para los primeros.
             </p>
           </div>
           <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-8"></div>
           <p className="text-gray-500 text-sm mb-4">
             © 2025 UN JUEGO. UN SISTEMA. — Método Matemático Exclusivo
           </p>
-          <p className="text-gray-600 text-xs">
-            Descargo de responsabilidad: Este contenido es solo para fines informativos y educativos. No constituye asesoramiento financiero, legal ni de inversión. Los resultados pasados no garantizan resultados futuros. Utiliza este método bajo tu propio riesgo.
+          <p className="text-yellow-400 text-xs font-semibold">
+            Preventa exclusiva: Este contenido es confidencial y solo para quienes reserven su lugar antes de la revelación pública. No constituye asesoramiento financiero, legal ni de inversión. Resultados pasados no garantizan resultados futuros.
           </p>
         </div>
       </div>

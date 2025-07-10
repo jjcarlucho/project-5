@@ -40,12 +40,10 @@ const Comparison = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-            Lo que
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"> NO es </span>
-            este sistema
+            Lo que <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">NO es</span> esta preventa
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Claridad absoluta sobre el enfoque correcto vs. el enfoque común
+          <p className="text-xl text-yellow-400 max-w-3xl mx-auto font-semibold">
+            Esto NO es para todos. Solo para los primeros que se atrevan a descubrir la verdad antes que el resto del mundo.
           </p>
         </div>
         <motion.div
@@ -102,7 +100,7 @@ const Comparison = () => {
         </motion.div>
         <div className="text-center mt-20">
           <p className="text-2xl font-light text-yellow-400 italic">
-            "La diferencia entre apostar y invertir está en el sistema que usas."
+            "La diferencia entre los insiders y el resto está en el acceso anticipado."
           </p>
         </div>
       </div>

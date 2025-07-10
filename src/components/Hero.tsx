@@ -51,11 +51,13 @@ const Hero = () => {
           className="flex-1 text-center lg:text-left"
         >
           <h1 className="text-6xl md:text-7xl font-serif font-extrabold text-white mb-8 leading-tight tracking-tight drop-shadow-lg">
+            <span className="block text-yellow-400 text-2xl md:text-3xl font-bold mb-2 tracking-widest uppercase">PREVENTA SECRETA</span>
             <span className="block">UN JUEGO.</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">UN SISTEMA.</span>
           </h1>
           <p className="text-2xl text-gray-300 mb-10 font-light max-w-2xl mx-auto lg:mx-0 drop-shadow">
-            El método matemático secreto con <span className="text-yellow-400 font-semibold">98% de efectividad</span>.<br />Usado en más de 500,000 shoes. Nunca antes revelado públicamente.
+            <span className="text-yellow-400 font-semibold">Acceso anticipado y exclusivo</span> al sistema matemático que <span className="text-red-400 font-bold">ellos no quieren que sepas</span>.<br />
+            Solo por tiempo limitado, antes de su revelación pública. Cupos ultra limitados.
           </p>
           <div className="flex justify-center lg:justify-start">
             <motion.div
@@ -72,13 +74,13 @@ const Hero = () => {
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }}
               >
-                Acceder al Método
+                Reservar mi acceso secreto
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
           </div>
-          <p className="text-sm text-gray-400 mt-6 italic">
-            Acceso limitado — solo para mentes disciplinadas
+          <p className="text-sm text-yellow-400 mt-6 italic font-bold">
+            Preventa exclusiva — Solo para los primeros en descubrirlo
           </p>
         </motion.div>
         {/* Imagen premium del libro con efecto tilt 3D */}

@@ -35,9 +35,9 @@ const Countdown = () => {
 
   return (
     <div className="premium-glass flex flex-col items-center justify-center p-6 rounded-2xl border border-yellow-500/20 shadow-xl max-w-xs mx-auto mt-12 animate-pulse">
-      <div className="text-yellow-400 text-lg font-bold mb-2 tracking-wide">ACCESO PRIORITARIO FINALIZA EN</div>
+      <div className="text-yellow-400 text-lg font-bold mb-2 tracking-wide">PREVENTA FINALIZA EN</div>
       {expired ? (
-        <div className="text-red-400 text-2xl font-bold">¡Tiempo agotado!</div>
+        <div className="text-red-400 text-2xl font-bold">¡Preventa cerrada!</div>
       ) : (
         <div className="flex gap-2 text-3xl font-mono text-yellow-200">
           <span>{time.h}</span>
@@ -47,7 +47,7 @@ const Countdown = () => {
           <span>{time.s}</span>
         </div>
       )}
-      <div className="text-gray-400 text-xs mt-2">Quedan cupos limitados para acceder al método premium.</div>
+      <div className="text-yellow-400 text-xs mt-2 font-semibold">Acceso anticipado solo para los primeros. No garantizado para todos.</div>
     </div>
   );
 };
