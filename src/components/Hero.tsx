@@ -63,7 +63,15 @@ const Hero = () => {
               transition={{ type: 'spring', stiffness: 300 }}
               className="inline-block"
             >
-              <Button type="button" variant="primary" className="backdrop-blur bg-white/10 border border-yellow-500/30 shadow-xl hover:shadow-yellow-400/30 text-lg px-10 py-5 group">
+              <Button
+                type="button"
+                variant="primary"
+                className="backdrop-blur bg-white/10 border border-yellow-500/30 shadow-xl hover:shadow-yellow-400/30 text-lg px-10 py-5 group"
+                onClick={() => {
+                  const el = document.getElementById('final-cta');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }}
+              >
                 Acceder al Método
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>

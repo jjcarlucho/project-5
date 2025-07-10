@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 
-const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzeQgUuesbHFQSFaFd7Spt8uV2OinqYHe0SYd820WHiBT_AlftKk-ewIN4DZRM7K1MaUA/exec';
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwQ_VURq4Kj2yASJCX_CYda6xFQ8oVmZwb8-0mfQn-HeH4-6rUrcIc3UjBMYPZRE3G8Hg/exec';
 
 const FinalCTA = () => {
   const [nombre, setNombre] = useState('');
@@ -40,7 +40,7 @@ const FinalCTA = () => {
   };
 
   return (
-    <section className="py-24 flex justify-center items-center bg-transparent">
+    <section id="final-cta" className="py-24 flex justify-center items-center bg-transparent">
       <div className="premium-glass max-w-xl w-full mx-auto p-12 rounded-2xl border border-yellow-500/10 shadow-2xl text-center">
         <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
           Accede al método <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">antes que nadie</span>
