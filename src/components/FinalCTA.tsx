@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 
-const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwTebu7hYLR6WfGc-7VFXZDKN0SYIVJfJ-8GWawqKU4SDbB3P2inMGjMvArPldSC30C79g/exec';
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbz0Mv4JlI4bHjIkPgqOOYPqHALiJxkdGkjP71yH6uxrLQf3HvaYmSrfR4EfCeZswdRPmw/exec';
 
 const FinalCTA = () => {
   const [nombre, setNombre] = useState('');
