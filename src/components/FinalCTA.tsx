@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 
-const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwQ_VURq4Kj2yASJCX_CYda6xFQ8oVmZwb8-0mfQn-HeH4-6rUrcIc3UjBMYPZRE3G8Hg/exec';
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwY9H0jUmoNzRpREWd7zTNAeYXEC8ytNslyt0PaoYTSd_2Rdh88jZnEsqhMflJ1StZ7/exec';
 
 const FinalCTA = () => {
   const [nombre, setNombre] = useState('');
@@ -24,10 +24,11 @@ const FinalCTA = () => {
     }
     setSubmitted(true);
     try {
+      const formBody = new URLSearchParams({ nombre, apellido, email }).toString();
       const res = await fetch(WEBHOOK_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nombre, apellido, email }),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formBody,
       });
       if (!res.ok) {
         const text = await res.text();
@@ -35,7 +36,6 @@ const FinalCTA = () => {
         setSubmitted(false);
         return;
       }
-      // Aquí luego se integrará EmailJS
       setNombre('');
       setApellido('');
       setEmail('');
