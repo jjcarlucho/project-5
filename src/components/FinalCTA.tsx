@@ -2,22 +2,41 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzeQgUuesbHFQSFaFd7Spt8uV2OinqYHe0SYd820WHiBT_AlftKk-ewIN4DZRM7K1MaUA/exec';
+
 const FinalCTA = () => {
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    if (!nombre.trim() || !apellido.trim()) {
+      setError('Por favor, completa tu nombre y apellido.');
+      return;
+    }
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      setError('Ingresa un email válido');
+      setError('Ingresa un email válido.');
       return;
     }
     setSubmitted(true);
-    localStorage.setItem('premium-suscriptor', email);
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, apellido, email }),
+      });
+      // Aquí luego se integrará EmailJS
+      setNombre('');
+      setApellido('');
+      setEmail('');
+    } catch (err) {
+      setError('Hubo un error al enviar tus datos. Intenta de nuevo.');
+    }
     setTimeout(() => setSubmitted(false), 3500);
-    setEmail('');
   };
 
   return (
@@ -29,13 +48,31 @@ const FinalCTA = () => {
         <p className="text-lg text-gray-300 mb-8">
           Suscríbete para recibir acceso prioritario y material exclusivo.
         </p>
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-center justify-center">
+          <input
+            type="text"
+            value={nombre}
+            onChange={e => setNombre(e.target.value)}
+            placeholder="Nombre"
+            className="w-full px-6 py-4 rounded-xl bg-black/40 border border-yellow-500/20 text-white placeholder:text-yellow-200/60 focus:outline-none focus:ring-2 focus:ring-yellow-400/40 text-lg font-light transition"
+            disabled={submitted}
+            required
+          />
+          <input
+            type="text"
+            value={apellido}
+            onChange={e => setApellido(e.target.value)}
+            placeholder="Apellido"
+            className="w-full px-6 py-4 rounded-xl bg-black/40 border border-yellow-500/20 text-white placeholder:text-yellow-200/60 focus:outline-none focus:ring-2 focus:ring-yellow-400/40 text-lg font-light transition"
+            disabled={submitted}
+            required
+          />
           <input
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
-            placeholder="Tu email premium"
-            className="w-full sm:w-auto px-6 py-4 rounded-xl bg-black/40 border border-yellow-500/20 text-white placeholder:text-yellow-200/60 focus:outline-none focus:ring-2 focus:ring-yellow-400/40 text-lg font-light transition"
+            placeholder="Email"
+            className="w-full px-6 py-4 rounded-xl bg-black/40 border border-yellow-500/20 text-white placeholder:text-yellow-200/60 focus:outline-none focus:ring-2 focus:ring-yellow-400/40 text-lg font-light transition"
             disabled={submitted}
             required
           />
@@ -62,7 +99,7 @@ const FinalCTA = () => {
           )}
         </AnimatePresence>
         <AnimatePresence>
-          {submitted && (
+          {submitted && !error && (
             <motion.div
               initial={{ opacity: 0, scale: 0.7 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -70,7 +107,7 @@ const FinalCTA = () => {
               className="flex flex-col items-center mt-8"
             >
               <CheckCircle2 className="w-16 h-16 text-yellow-400 mb-2 animate-bounce" />
-              <span className="text-yellow-200 text-lg font-semibold">¡Suscripción exitosa!</span>
+              <span className="text-yellow-200 text-lg font-semibold">¡Suscripción exitosa! Revisa tu correo para más novedades.</span>
             </motion.div>
           )}
         </AnimatePresence>
