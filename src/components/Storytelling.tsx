@@ -15,7 +15,7 @@ const Storytelling = () => {
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8 leading-tight">
             Revelación prohibida:
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
-              El sistema que ellos no quieren que descubras
+              El sistema que la élite no quería que descubras
             </span>
           </h2>
         </div>
@@ -29,7 +29,7 @@ const Storytelling = () => {
           >
             <Eye className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
             <span>
-              Durante más de 20 años, este conocimiento fue transmitido en secreto, solo a una élite dispuesta a pagar más de $10,000 USD por el acceso anticipado. Ahora, por primera vez, se abre una preventa exclusiva para el público.
+              Durante más de 20 años, este conocimiento fue transmitido en secreto, solo a una élite dispuesta a pagar más de $10,000 USD por el acceso anticipado. Hoy, por primera vez, puedes ser parte de los primeros en acceder a la fórmula.
             </span>
           </motion.div>
           <motion.div
@@ -41,7 +41,7 @@ const Storytelling = () => {
           >
             <Crown className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
             <span>
-              Solo una élite selecta conocía este patrón matemático. Banqueros, inversores institucionales, y jugadores profesionales que operaban en los círculos más exclusivos del mundo. Hoy, tú puedes ser parte de los primeros en acceder.
+              Solo una élite selecta conocía este patrón matemático. Banqueros, inversores institucionales y jugadores profesionales de los círculos más exclusivos del mundo. Ahora, tú puedes ser parte de los insiders.
             </span>
           </motion.div>
           <div className="premium-glass bg-gradient-to-r from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-yellow-500/20 mt-12">

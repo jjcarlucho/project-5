@@ -51,15 +51,14 @@ const Hero = () => {
           className="flex-1 text-center lg:text-left"
         >
           <h1 className="text-6xl md:text-7xl font-serif font-extrabold text-white mb-8 leading-tight tracking-tight drop-shadow-lg">
-            <span className="block text-yellow-400 text-2xl md:text-3xl font-bold mb-2 tracking-widest uppercase">PREVENTA SECRETA</span>
-            <span className="block">UN JUEGO.</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">UN SISTEMA.</span>
+            <span className="block text-yellow-400 text-2xl md:text-3xl font-bold mb-2 tracking-widest uppercase">¡ATENCIÓN! PREVENTA SECRETA</span>
+            <span className="block">El sistema matemático <span className="text-yellow-400">prohibido</span></span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">que cambia tu juego para siempre</span>
           </h1>
           <p className="text-2xl text-gray-300 mb-10 font-light max-w-2xl mx-auto lg:mx-0 drop-shadow">
-            <span className="text-yellow-400 font-semibold">Acceso anticipado y exclusivo</span> al sistema matemático que <span className="text-red-400 font-bold">ellos no quieren que sepas</span>.<br />
-            Solo por tiempo limitado, antes de su revelación pública. Cupos ultra limitados.
+            Descubre el <span className="text-yellow-400 font-semibold">método secreto</span> con <span className="text-red-400 font-bold">98% de efectividad</span> que la élite ha usado en silencio durante décadas. Acceso anticipado, cupos ultra limitados. ¿Serás uno de los pocos?
           </p>
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
             <motion.div
               whileHover={{ scale: 1.07, boxShadow: '0 0 32px #D4AF37aa' }}
               transition={{ type: 'spring', stiffness: 300 }}
@@ -74,13 +73,14 @@ const Hero = () => {
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }}
               >
-                Reservar mi acceso secreto
+                Quiero mi acceso exclusivo
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
+            <a href="#benefits" className="text-yellow-400 underline text-lg font-semibold hover:text-yellow-300 transition">Ver beneficios</a>
           </div>
           <p className="text-sm text-yellow-400 mt-6 italic font-bold">
-            Preventa exclusiva — Solo para los primeros en descubrirlo
+            Solo para los primeros. No garantizado para todos.
           </p>
         </motion.div>
         {/* Imagen premium del libro con efecto tilt 3D */}

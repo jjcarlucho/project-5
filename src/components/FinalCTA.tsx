@@ -51,10 +51,10 @@ const FinalCTA = () => {
     <section id="final-cta" className="py-24 flex justify-center items-center bg-transparent">
       <div className="premium-glass max-w-xl w-full mx-auto p-12 rounded-2xl border border-yellow-500/10 shadow-2xl text-center">
         <h2 className="text-3xl md:text-4xl font-serif font-bold text-yellow-400 mb-6">
-          Reserva tu acceso <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">antes que el sistema sea revelado</span>
+          ¡Asegura tu lugar antes que nadie!
         </h2>
-        <p className="text-lg text-gray-300 mb-8">
-          Estás a punto de entrar a la preventa secreta. Solo los primeros tendrán acceso anticipado y bonos exclusivos. ¡No garantizado para todos!
+        <p className="text-lg text-yellow-400 mb-8 font-semibold">
+          Solo los primeros tendrán acceso anticipado y bonos exclusivos. ¡No te quedes fuera!
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-center justify-center">
           <input
@@ -91,7 +91,7 @@ const FinalCTA = () => {
             className="px-8 py-4 rounded-xl bg-gradient-to-r from-yellow-500/80 to-yellow-400/80 text-black font-bold text-lg shadow-lg border border-yellow-500/30 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
             disabled={submitted}
           >
-            {submitted ? '¡Reservado!' : 'Reservar mi lugar secreto'}
+            {submitted ? '¡Acceso reservado!' : 'Quiero mi acceso exclusivo'}
           </motion.button>
         </form>
         <AnimatePresence>
@@ -115,7 +115,7 @@ const FinalCTA = () => {
               className="flex flex-col items-center mt-8"
             >
               <CheckCircle2 className="w-16 h-16 text-yellow-400 mb-2 animate-bounce" />
-              <span className="text-yellow-200 text-lg font-semibold">¡Pre-reserva exitosa! Pronto recibirás instrucciones secretas en tu correo.</span>
+              <span className="text-yellow-200 text-lg font-semibold">¡Listo! Revisa tu correo para instrucciones secretas y tu acceso prioritario.</span>
             </motion.div>
           )}
         </AnimatePresence>
