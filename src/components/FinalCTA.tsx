@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbz0Mv4JlI4bHjIkPgqOOYPqHALiJxkdGkjP71yH6uxrLQf3HvaYmSrfR4EfCeZswdRPmw/exec';
 
@@ -24,25 +25,19 @@ const FinalCTA = () => {
     }
     setSubmitted(true);
     try {
-      const formBody = new URLSearchParams({ nombre, apellido, email }).toString();
-      const res = await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formBody,
-      });
-      if (!res.ok) {
-        const text = await res.text();
-        console.log('Respuesta del webhook:', text);
-        setError(`Error: ${res.status} - ${text}`);
-        setSubmitted(false);
-        return;
-      }
+      await emailjs.send(
+        'service_ftj2umo',
+        'template_ord7fi7',
+        { nombre, apellido, email },
+        'urW_9W9UQMNBK8-Sz'
+      );
       setNombre('');
       setApellido('');
       setEmail('');
     } catch (err: any) {
-      setError('Error de red: ' + (err?.message || JSON.stringify(err)));
-      console.error('Error de red al enviar datos:', err);
+      setError('Error al enviar el email: ' + (err?.text || err?.message || JSON.stringify(err)));
+      setSubmitted(false);
+      return;
     }
     setTimeout(() => setSubmitted(false), 3500);
   };
