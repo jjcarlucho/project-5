@@ -32,6 +32,7 @@ const FinalCTA = () => {
       });
       if (!res.ok) {
         const text = await res.text();
+        console.log('Respuesta del webhook:', text);
         setError(`Error: ${res.status} - ${text}`);
         setSubmitted(false);
         return;
@@ -39,8 +40,9 @@ const FinalCTA = () => {
       setNombre('');
       setApellido('');
       setEmail('');
-    } catch (err) {
-      setError('Hubo un error al enviar tus datos. Intenta de nuevo.');
+    } catch (err: any) {
+      setError('Error de red: ' + (err?.message || JSON.stringify(err)));
+      console.error('Error de red al enviar datos:', err);
     }
     setTimeout(() => setSubmitted(false), 3500);
   };
