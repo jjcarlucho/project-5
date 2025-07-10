@@ -24,11 +24,17 @@ const FinalCTA = () => {
     }
     setSubmitted(true);
     try {
-      await fetch(WEBHOOK_URL, {
+      const res = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nombre, apellido, email }),
       });
+      if (!res.ok) {
+        const text = await res.text();
+        setError(`Error: ${res.status} - ${text}`);
+        setSubmitted(false);
+        return;
+      }
       // Aquí luego se integrará EmailJS
       setNombre('');
       setApellido('');
